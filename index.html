@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Soul Sportswear — Alta Performance Radical</title>
+    
+    <!-- ⚡ SILENCIADOR DE AVISO DO TAILWIND PLAY CDN ⚡ -->
+    <script>
+        (function() {
+            const originalWarn = console.warn;
+            console.warn = function(...args) {
+                // Filtra e ignora o aviso de produção do CDN do Tailwind
+                if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) {
+                    return;
+                }
+                originalWarn.apply(console, args);
+            };
+        })();
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        grafite: {
+                            800: '#1e2022',
+                            900: '#121314',
+                        },
+                        sunset: '#ff5e36',
+                        neonPurple: '#a81eff',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar to match aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121314;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #ff5e36 0%, #a81eff 100%);
+            border-radius: 4px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ff5e36 0%, #a81eff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #ff5e36 0%, #a81eff 100%);
+        }
+        .gradient-border:hover {
+            border-image: linear-gradient(135deg, #ff5e36, #a81eff) 1;
+        }
+        /* Typing animation indicator for AI Chat */
+        .typing-dot {
+            animation: typingBounce 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typingBounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-grafite-900 text-gray-100 font-sans min-h-screen">
+
+    <!-- TOP BAR ANNOUNCEMENT -->
+    <div class="gradient-bg text-center text-xs md:text-sm font-bold py-2 px-4 text-white tracking-widest uppercase animate-pulse">
+        ⚡ COPA DO MUNDO IRON SOUL: Frete Grátis nas compras acima de R$ 250! ⚡
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="bg-grafite-800/95 sticky top-0 z-40 border-b border-gray-800 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo Header Container -->
+                <div class="flex items-center gap-3">
+                    <div class="h-14 w-14 flex items-center justify-center bg-grafite-900/60 rounded-xl border border-gray-700/50 p-1.5 shadow-inner relative overflow-hidden">
+                        <!-- Primary Image from User Link -->
+                        <img src="u:\Users\ls.brito\Desktop\IronSoul\ironsoullogo.png" alt="Logo Iron Soul" class="h-full w-full object-contain hidden" 
+                             onload="this.classList.remove('hidden'); document.getElementById('nav-logo-svg').classList.add('hidden')" 
+                             onerror="this.classList.add('hidden'); document.getElementById('nav-logo-svg').classList.remove('hidden')">
+                        
+                        <!-- Fallback Vector Logo -->
+                        <svg id="nav-logo-svg" class="h-full w-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="ironSoulGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff5e36" />
+                                    <stop offset="100%" stop-color="#a81eff" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="50,6 90,26 90,74 50,94 10,74 10,26" fill="none" stroke="url(#ironSoulGrad)" stroke-width="4" stroke-linejoin="round"/>
+                            <path d="M30,30 L40,30 L40,70 L30,70 Z" fill="url(#ironSoulGrad)"/>
+                            <path d="M46,30 L68,30 L68,42 L46,42 L46,50 L68,58 L68,70 L46,70 L46,62 L58,62 L58,58 L46,54 Z" fill="url(#ironSoulGrad)"/>
+                            <polygon points="41,45 52,45 47,55 55,55 45,71 48,58 41,58" fill="#ffffff" opacity="0.9"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tighter uppercase block">IRON <span class="gradient-text">SOUL</span></span>
+                        <span class="text-[10px] tracking-widest uppercase text-gray-400">Extreme Sportswear</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-bold uppercase tracking-wider">
+                    <a href="#catalogo" class="hover:text-sunset transition duration-300">Coleções</a>
+                    <a href="#mascote-banner" class="text-sunset flex items-center gap-1 hover:opacity-80 transition">
+                        <i class="fa-solid fa-trophy text-xs"></i> Copa Especial
+                    </a>
+                    <a href="#uniformes-decorativos" class="hover:text-neonPurple transition duration-300">Corporativo</a>
+                    <a href="#calculadora-orcamento" class="hover:text-sunset transition duration-300">Simulador de Lotes</a>
+                </div>
+
+                <!-- Search & Cart Options -->
+                <div class="flex items-center space-x-4">
+                    <!-- Global Search Bar -->
+                    <div class="relative hidden sm:block">
+                        <input id="global-search" type="text" placeholder="Buscar produtos..." 
+                               class="bg-grafite-900 text-sm rounded-full py-2 pl-4 pr-10 border border-gray-700 focus:outline-none focus:border-sunset w-48 md:w-64 transition-all duration-300">
+                        <i class="fa-solid fa-magnifying-glass absolute right-3 top-3 text-gray-400"></i>
+                    </div>
+
+                    <!-- Cart Icon Button -->
+                    <button onclick="toggleCartModal()" class="relative p-2 text-gray-300 hover:text-white transition">
+                        <span class="absolute -top-1 -right-1 bg-sunset text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center" id="cart-counter">0</span>
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 text-gray-400 hover:text-white" onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="hidden md:hidden bg-grafite-800 border-t border-gray-800 py-4 px-6 space-y-3">
+            <a href="#catalogo" class="block text-sm font-bold uppercase text-gray-300 hover:text-sunset">Coleções</a>
+            <a href="#mascote-banner" class="block text-sm font-bold uppercase text-sunset">🏆 Copa Especial</a>
+            <a href="#uniformes-decorativos" class="block text-sm font-bold uppercase text-gray-300 hover:text-neonPurple">Corporativo</a>
+            <a href="#calculadora-orcamento" class="block text-sm font-bold uppercase text-gray-300 hover:text-sunset">Simulador de Lotes</a>
+        </div>
+    </nav>
+
+    <!-- COPA DO MUNDO HERO BANNER -->
+    <section id="mascote-banner" class="relative bg-gradient-to-r from-grafite-900 via-grafite-800 to-grafite-900 border-b border-gray-800 overflow-hidden py-12 lg:py-20">
+        <!-- Abstract Background Effects -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-overlay" style="background-image: url('watermarked_img_7116405078940971604.png'), radial-gradient(circle, #ff5e36 0%, #121314 100%)"></div>
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-sunset/10 blur-[120px]"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-neonPurple/15 blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Mascot Image Container using the generated Mascot asset -->
+                <div class="lg:col-span-5 flex justify-center order-2 lg:order-1">
+                    <div class="relative group w-full max-w-[400px]">
+                        <!-- Frame glow -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-sunset to-neonPurple rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-grafite-900 rounded-xl overflow-hidden p-2 min-h-[350px] flex items-center justify-center">
+                            <!-- Image tries to load first -->
+                            <img id="mascot-img" src="watermarked_img_7116405078940971604.png" 
+                                 onload="this.classList.remove('hidden'); document.getElementById('mascot-fallback-svg').classList.add('hidden')" 
+                                 onerror="this.classList.add('hidden'); document.getElementById('mascot-fallback-svg').classList.remove('hidden')" 
+                                 alt="Mascote Copa do Mundo Iron Soul" 
+                                 class="rounded-lg w-full h-auto object-cover transform transition duration-500 hover:scale-105 hidden">
+                            
+                            <!-- 🔥 BEAUTIFUL fallback SVG representing a burning elemental core mascot when local file is missing -->
+                            <div id="mascot-fallback-svg" class="w-full flex flex-col items-center justify-center py-10 px-6 text-center">
+                                <svg class="w-32 h-32 mb-4 animate-bounce" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="fireGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#a81eff" />
+                                            <stop offset="50%" stop-color="#ff5e36" />
+                                            <stop offset="100%" stop-color="#ffb836" />
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Dynamic Shield Backdrop -->
+                                    <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="#1e2022" stroke="url(#fireGrad)" stroke-width="4" opacity="0.4"/>
+                                    <!-- Flaming Core Mascot Icon -->
+                                    <path d="M50,15 C55,30 75,40 75,55 C75,70 60,85 50,85 C40,85 25,70 25,55 C25,40 45,30 50,15 Z" fill="url(#fireGrad)"/>
+                                    <path d="M50,30 C53,40 65,48 65,58 C65,68 55,75 50,75 C45,75 35,68 35,58 C35,48 47,40 50,30 Z" fill="#ffffff" opacity="0.8"/>
+                                    <polygon points="45,48 55,48 48,58 56,58 46,70 50,59 44,59" fill="#121314"/>
+                                </svg>
+                                <h3 class="text-xl font-black uppercase tracking-wider text-white">Alma de Ferro</h3>
+                                <p class="text-xs text-sunset font-bold uppercase tracking-widest mt-1">Mascote Elemental Oficial</p>
+                                <p class="text-[10px] text-gray-400 mt-2 max-w-xs">Carregando o guerreiro de fogo e metal diretamente da forja da Iron Soul.</p>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-4 right-4 bg-black/80 backdrop-blur-sm text-sunset font-bold text-xs uppercase px-3 py-1.5 rounded-full border border-sunset/50">
+                            🔥 Mascot Official Edition
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Banner Copywriting -->
+                <div class="lg:col-span-7 space-y-6 order-1 lg:order-2 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-sunset/10 border border-sunset/30 rounded-full px-4 py-1 text-sunset font-semibold text-xs uppercase tracking-wider">
+                        <i class="fa-solid fa-fire animate-bounce"></i> Coleção Especial de Copa
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-black uppercase tracking-tight leading-none text-white">
+                        SINTA A ALMA <br>
+                        <span class="gradient-text">DE FERRO EM CAMPO</span>
+                    </h1>
+                    <p class="text-gray-300 text-lg max-w-2xl mx-auto lg:mx-0 font-medium">
+                        Unimos o fogo dos esportes radicais à determinação do maior torneio do planeta. Conheça o mascote oficial e as camisas exclusivas com tecnologia Dry-Fit Premium de absorção máxima.
+                    </p>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#catalogo" class="gradient-bg text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-sunset/30 hover:opacity-95 transform hover:-translate-y-1 transition text-sm uppercase tracking-wider">
+                            <i class="fa-solid fa-basket-shopping mr-2"></i> Garanta o Seu Manto
+                        </a>
+                        <button onclick="openMascotChat()" class="bg-transparent border-2 border-sunset hover:bg-sunset/10 text-sunset px-8 py-4 rounded-full text-sm font-bold transition uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-comments"></i> Treine com o Mascote IA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN STORE SECTION (NETSHOES STYLE GRID WITH FILTERS) -->
+    <main id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Header Section with count -->
+        <div class="border-b border-gray-800 pb-6 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h2 class="text-3xl font-black uppercase tracking-wider text-white">Coleção <span class="text-sunset">Pro-Athlete</span></h2>
+                <p class="text-gray-400 text-sm mt-1">Produtos inspirados na performance extrema da Iron Soul</p>
+            </div>
+            <div class="flex items-center gap-3 w-full sm:w-auto">
+                <span class="text-gray-400 text-sm whitespace-nowrap"><span id="product-count" class="text-sunset font-bold">8</span> itens encontrados</span>
+                <select id="sort-select" onchange="sortProducts()" class="bg-grafite-800 text-sm text-gray-300 border border-gray-700 rounded-lg p-2.5 focus:outline-none focus:border-sunset w-full sm:w-48">
+                    <option value="featured">Destaques</option>
+                    <option value="price-low">Menor Preço</option>
+                    <option value="price-high">Maior Preço</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <!-- LEFT SIDEBAR FILTER -->
+            <aside class="space-y-6 bg-grafite-800 p-6 rounded-2xl border border-gray-800 self-start">
+                
+                <div class="flex items-center justify-between border-b border-gray-700 pb-3">
+                    <h3 class="font-bold text-lg uppercase tracking-wider flex items-center gap-2 text-white">
+                        <i class="fa-solid fa-sliders text-sunset"></i> Filtros
+                    </h3>
+                    <button onclick="clearAllFilters()" class="text-xs text-gray-400 hover:text-sunset font-medium">Limpar Tudo</button>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="font-bold text-sm uppercase tracking-wider text-gray-300 mb-3">Categoria</h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white transition">
+                            <input type="checkbox" name="category" value="Camiseta" onchange="applyFilters()" class="rounded bg-grafite-900 border-gray-700 text-sunset focus:ring-sunset">
+                            <span class="text-sm">Camisetas</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white transition">
+                            <input type="checkbox" name="category" value="Regata" onchange="applyFilters()" class="rounded bg-grafite-900 border-gray-700 text-sunset focus:ring-sunset">
+                            <span class="text-sm">Regatas</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white transition">
+                            <input type="checkbox" name="category" value="Moletom" onchange="applyFilters()" class="rounded bg-grafite-900 border-gray-700 text-sunset focus:ring-sunset">
+                            <span class="text-sm">Moletons / Casacos</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Gender -->
+                <div>
+                    <h4 class="font-bold text-sm uppercase tracking-wider text-gray-300 mb-3">Gênero</h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white transition">
+                            <input type="checkbox" name="gender" value="Masculino" onchange="applyFilters()" class="rounded bg-grafite-900 border-gray-700 text-sunset focus:ring-sunset">
+                            <span class="text-sm">Masculino</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-gray-300 hover:text-white transition">
+                            <input type="checkbox" name="gender" value="Feminino" onchange="applyFilters()" class="rounded bg-grafite-900 border-gray-700 text-sunset focus:ring-sunset">
+                            <span class="text-sm">Feminino</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Sizes -->
+                <div>
+                    <h4 class="font-bold text-sm uppercase tracking-wider text-gray-300 mb-3">Tamanho</h4>
+                    <div class="grid grid-cols-4 gap-2">
+                        <button onclick="toggleSizeFilter(this, 'P')" class="size-btn bg-grafite-900 border border-gray-700 text-sm py-1.5 text-center font-bold rounded-lg text-gray-400 hover:border-sunset hover:text-white transition">P</button>
+                        <button onclick="toggleSizeFilter(this, 'M')" class="size-btn bg-grafite-900 border border-gray-700 text-sm py-1.5 text-center font-bold rounded-lg text-gray-400 hover:border-sunset hover:text-white transition">M</button>
+                        <button onclick="toggleSizeFilter(this, 'G')" class="size-btn bg-grafite-900 border border-gray-700 text-sm py-1.5 text-center font-bold rounded-lg text-gray-400 hover:border-sunset hover:text-white transition">G</button>
+                        <button onclick="toggleSizeFilter(this, 'GG')" class="size-btn bg-grafite-900 border border-gray-700 text-sm py-1.5 text-center font-bold rounded-lg text-gray-400 hover:border-sunset hover:text-white transition">GG</button>
+                    </div>
+                </div>
+
+                <!-- Price Slider Range -->
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-bold text-sm uppercase tracking-wider text-gray-300">Faixa de Preço</h4>
+                        <span id="price-display" class="text-sm font-bold text-sunset">R$ 350</span>
+                    </div>
+                    <input type="range" id="price-range" min="50" max="350" value="350" oninput="updatePriceSlider(this.value)" class="w-full accent-sunset bg-grafite-900 rounded-lg appearance-none h-2 cursor-pointer">
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>R$ 50</span>
+                        <span>R$ 350</span>
+                    </div>
+                </div>
+
+                <!-- Quality seal card in sidebar -->
+                <div class="bg-grafite-900 p-4 rounded-xl border border-gray-700 text-center space-y-2">
+                    <i class="fa-solid fa-shield-halved text-2xl text-neonPurple"></i>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-white">Garantia Iron Soul</h5>
+                    <p class="text-[11px] text-gray-400 leading-relaxed">Costuras triplamente reforçadas desenvolvidas para cross-trainers e esportes extremos.</p>
+                </div>
+            </aside>
+
+            <!-- PRODUCT GRID (RIGHT SIDE) -->
+            <div class="lg:col-span-3">
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Products dynamically rendered by JS -->
+                </div>
+
+                <!-- Empty state if no items match -->
+                <div id="empty-state" class="hidden text-center py-16 space-y-4">
+                    <i class="fa-regular fa-face-frown text-5xl text-gray-500"></i>
+                    <h4 class="text-xl font-bold text-gray-300">Nenhum produto encontrado</h4>
+                    <p class="text-gray-500 text-sm">Experimente ajustar seus critérios de filtragem do lado esquerdo.</p>
+                    <button onclick="clearAllFilters()" class="gradient-bg text-white font-bold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider">Limpar Filtros</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- TEAM UNIFORM SHOWCASE BANNER -->
+    <section id="uniformes-decorativos" class="bg-grafite-800 py-16 border-t border-b border-gray-700 relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-5 mix-blend-screen" style="background-image: url('watermarked_img_16825667129626596257.png'), linear-gradient(to bottom, #1e2022, #121314)"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-neonPurple/10 border border-neonPurple/30 rounded-full px-4 py-1 text-neonPurple font-semibold text-xs uppercase tracking-wider">
+                        <i class="fa-solid fa-people-group"></i> Uniformes dos Colaboradores
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight">
+                        SUA EQUIPE COM A <br>
+                        <span class="gradient-text">MESMA PRESENÇA RADICAL</span>
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Nossos uniformes corporativos foram criados para alinhar estilo e performance. Combinando materiais Dry-Fit de alta gramatura, recortes estratégicos e proteção UV, fornecemos o mesmo design profissional utilizado pelos embaixadores e membros da equipe oficial Iron Soul.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-regular fa-circle-check text-sunset text-lg mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Modelagem Avançada</h4>
+                                <p class="text-xs text-gray-400">Desenvolvida para durabilidade e flexibilidade no trabalho diário.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-regular fa-circle-check text-neonPurple text-lg mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Opções Masculina e Feminina</h4>
+                                <p class="text-xs text-gray-400">Ajustes ergonômicos desenhados individualmente para as coleções.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#calculadora-orcamento" class="inline-flex items-center gap-2 bg-grafite-900 border border-gray-700 hover:border-sunset text-gray-200 hover:text-white font-bold py-3.5 px-6 rounded-full transition text-xs uppercase tracking-wider">
+                            Simular Orçamento de Lote <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Display Showcase Image using the generated Uniform asset -->
+                <div class="lg:col-span-6 flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-neonPurple to-sunset rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-700"></div>
+                        <div class="relative bg-grafite-900 rounded-xl overflow-hidden p-2 border border-gray-700/60">
+                            <img src="watermarked_img_16825667129626596257.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/121314/a81eff?text=Colecao+Uniformes';" alt="Exibição Uniformes Masculino e Feminino" class="rounded-lg object-cover max-h-[380px] w-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE BUDGET ESTIMATOR & CUSTOMIZER TOOL WITH AI SLOGAN GENERATOR -->
+    <section id="calculadora-orcamento" class="py-16 bg-grafite-900 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-black uppercase tracking-wider text-white">Simulador de <span class="gradient-text">Orçamentos</span></h2>
+                <p class="text-gray-400 text-sm mt-2">Deseja vestir sua equipe com as roupas esportivas de alta performance da Iron Soul? Faça sua simulação personalizada de lotes e veja os descontos exclusivos progressivos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Calculator inputs & AI generator (8 cols) -->
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="bg-grafite-800 rounded-3xl border border-gray-800 p-6 md:p-8 shadow-2xl relative overflow-hidden">
+                        <h3 class="text-lg font-bold text-white uppercase tracking-wider border-b border-gray-700 pb-3 flex items-center gap-2 mb-6">
+                            <i class="fa-solid fa-calculator text-sunset"></i> 1. Configurar Pedido
+                        </h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Piece Selector -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-400 tracking-wider mb-2">Selecione o Item Base</label>
+                                <select id="calc-item" onchange="calculateBudget()" class="w-full bg-grafite-900 text-gray-200 border border-gray-700 rounded-xl p-3 focus:outline-none focus:border-sunset">
+                                    <option value="camiseta" data-price="79.90">Camiseta Dry-Fit Premium (R$ 79,90 un)</option>
+                                    <option value="regata" data-price="69.90">Regata Premium Soft (R$ 69,90 un)</option>
+                                    <option value="moletom" data-price="189.90">Moletom Canguru Premium (R$ 189,90 un)</option>
+                                    <option value="kit" data-price="299.90">Kit Completo Uniforme (Todos os itens + R$ 299,90 un)</option>
+                                </select>
+                            </div>
+
+                            <!-- Quantity Input with Range -->
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <label class="block text-xs font-bold uppercase text-gray-400 tracking-wider">Quantidade (Lote)</label>
+                                    <span id="calc-qty-badge" class="bg-sunset/10 text-sunset text-xs font-extrabold px-3 py-1 rounded-full border border-sunset/20">15 unidades</span>
+                                </div>
+                                <input type="range" id="calc-qty" min="10" max="200" value="15" oninput="updateQtySlider(this.value)" class="w-full accent-sunset bg-grafite-900 rounded-lg appearance-none h-2.5 cursor-pointer">
+                                <div class="flex justify-between text-[10px] text-gray-500 mt-1 uppercase font-bold">
+                                    <span>Mínimo: 10</span>
+                                    <span>Médio: 100</span>
+                                    <span>Máximo: 200+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Personalization options checkboxes -->
+                        <div class="space-y-3 mt-6">
+                            <label class="block text-xs font-bold uppercase text-gray-400 tracking-wider">Adicionais de Personalização</label>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label class="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-grafite-900/50 border border-gray-700/50 hover:border-gray-600 transition">
+                                    <input type="checkbox" id="add-name" onchange="calculateBudget()" class="rounded bg-grafite-900 border-gray-700 text-sunset focus:ring-sunset">
+                                    <div>
+                                        <span class="text-sm font-semibold text-white block">Nome Individual Costas (+R$ 15/peça)</span>
+                                        <span class="text-xs text-gray-400">Nome individual de cada atleta.</span>
+                                    </div>
+                                </label>
+
+                                <label class="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-grafite-900/50 border border-gray-700/50 hover:border-gray-600 transition">
+                                    <input type="checkbox" id="add-reflective" onchange="calculateBudget()" class="rounded bg-grafite-900 border-gray-700 text-sunset focus:ring-sunset">
+                                    <div>
+                                        <span class="text-sm font-semibold text-white block">Logo Refletivo Traseiro (+R$ 10/peça)</span>
+                                        <span class="text-xs text-gray-400">Estampa que brilha sob luz direta externa.</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Slogan & Design Generator Panel -->
+                    <div class="bg-grafite-800 rounded-3xl border border-gray-700/50 p-6 md:p-8 shadow-2xl relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-neonPurple/10 blur-[50px]"></div>
+                        <h3 class="text-lg font-bold text-white uppercase tracking-wider border-b border-gray-700 pb-3 flex items-center justify-between">
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-wand-magic-sparkles text-neonPurple"></i> 2. Criador Criativo AI
+                            </span>
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-neonPurple/20 text-neonPurple px-3 py-1 rounded-full border border-neonPurple/30">Gemini 2.5 Flash Powered</span>
+                        </h3>
+                        <p class="text-gray-400 text-xs mt-3">Precisa de inspiração para a estampa do seu lote corporativo ou de equipe? Deixe nossa IA integrada criar slogans marcantes e sugerir arranjos visuais perfeitos.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase text-gray-400 tracking-wider mb-2">Esporte ou Tema</label>
+                                <input type="text" id="ai-sport" placeholder="Ex: Crossfit, Corrida, Boxe" class="w-full bg-grafite-900 text-xs text-gray-200 border border-gray-700 rounded-xl p-3 focus:outline-none focus:border-neonPurple">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase text-gray-400 tracking-wider mb-2">Tom do Slogan</label>
+                                <select id="ai-tone" class="w-full bg-grafite-900 text-xs text-gray-200 border border-gray-700 rounded-xl p-3 focus:outline-none focus:border-neonPurple">
+                                    <option value="Radical e Agressivo">Radical e Agressivo</option>
+                                    <option value="Motivacional e Focado">Motivacional e Focado</option>
+                                    <option value="Moderno e Minimalista">Moderno e Minimalista</option>
+                                    <option value="Espírito de Equipe/União">Espírito de Equipe / União</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase text-gray-400 tracking-wider mb-2">Foco / Valores</label>
+                                <input type="text" id="ai-keywords" placeholder="Ex: superação, fogo, ferro" class="w-full bg-grafite-900 text-xs text-gray-200 border border-gray-700 rounded-xl p-3 focus:outline-none focus:border-neonPurple">
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end mt-4">
+                            <button onclick="generateSlogansWithAI()" id="ai-generate-btn" class="gradient-bg text-white font-bold py-3 px-6 rounded-xl hover:opacity-95 shadow-lg shadow-sunset/10 transition uppercase tracking-wider text-xs flex items-center gap-2">
+                                <i class="fa-solid fa-gears animate-spin hidden" id="ai-loader-icon"></i>
+                                <span id="ai-btn-text">Gerar Ideias com IA</span>
+                            </button>
+                        </div>
+
+                        <!-- AI Response Area -->
+                        <div id="ai-output-container" class="hidden mt-6 pt-6 border-t border-gray-700/50 space-y-4">
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Slogans Sugeridos (Clique para Copiar)</h4>
+                                <div id="ai-slogans-list" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                    <!-- Dynamic content -->
+                                </div>
+                            </div>
+                            <div class="bg-grafite-900 p-4 rounded-xl border border-gray-700/50">
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-neonPurple mb-1 flex items-center gap-1">
+                                    <i class="fa-solid fa-palette"></i> Sugestão de Direção de Arte
+                                </h4>
+                                <p id="ai-art-direction" class="text-xs text-gray-300 leading-relaxed"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resumo da Proposta (4 cols) -->
+                <div class="lg:col-span-4 bg-grafite-800 p-6 rounded-3xl border border-gray-800 flex flex-col justify-between space-y-6 shadow-2xl">
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-bold text-white uppercase tracking-wider border-b border-gray-700 pb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-receipt text-neonPurple"></i> Resumo da Proposta
+                        </h3>
+
+                        <!-- Cost Items list -->
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Preço Base (Unitário):</span>
+                                <span id="res-base-unit" class="text-white font-medium">R$ 79,90</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Adicionais (Unitário):</span>
+                                <span id="res-add-unit" class="text-white font-medium">R$ 0,00</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-850 pb-2">
+                                <span class="text-gray-400">Total Unitário Líquido:</span>
+                                <span id="res-net-unit" class="text-white font-bold">R$ 79,90</span>
+                            </div>
+                            <div class="flex justify-between pt-1">
+                                <span class="text-gray-400">Subtotal Bruto:</span>
+                                <span id="res-subtotal" class="text-gray-300">R$ 1.198,50</span>
+                            </div>
+                            <div class="flex justify-between text-emerald-400 font-semibold">
+                                <span id="res-discount-desc">Desconto Progressivo (5%):</span>
+                                <span id="res-discount">- R$ 59,93</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final Cost highlight -->
+                    <div class="bg-grafite-900 p-4 rounded-xl text-center border border-gray-700/50 space-y-1">
+                        <span class="text-xs uppercase text-gray-400 font-bold tracking-widest block">Total Estimado</span>
+                        <span id="res-total" class="text-3xl font-black gradient-text tracking-tight">R$ 1.138,57</span>
+                        <p class="text-[10px] text-gray-500">Produção estimada em 10 dias úteis. Frete grátis.</p>
+                    </div>
+
+                    <!-- Submission Action -->
+                    <div class="space-y-2">
+                        <button onclick="submitOrderSimulation()" class="w-full gradient-bg text-white font-bold py-3.5 px-6 rounded-xl hover:opacity-95 shadow-lg shadow-sunset/10 transition uppercase tracking-wider text-xs">
+                            <i class="fa-regular fa-envelope mr-2"></i> Solicitar Análise de Arte
+                        </button>
+                        <p class="text-[10px] text-gray-500 text-center">Simulação sem compromisso. Nosso setor de design entrará em contato para mockups gratuitos.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING AI CHAT BOT WIDGET -->
+    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Chat Bubble Trigger -->
+        <button onclick="toggleMascotChat()" class="relative h-14 w-14 rounded-full gradient-bg flex items-center justify-center text-white shadow-2xl shadow-sunset/30 transform hover:scale-110 active:scale-95 transition-all duration-300 border border-white/20">
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded-full animate-bounce">AI</span>
+            <i class="fa-solid fa-fire text-xl" id="chat-icon-flame"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="ai-chat-window" class="hidden mt-3 w-[350px] md:w-[380px] h-[500px] bg-grafite-800 rounded-2xl border border-gray-700 shadow-2xl flex flex-col overflow-hidden transition-all duration-300">
+            <!-- Header -->
+            <div class="p-4 bg-grafite-900 border-b border-gray-700 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <img src="watermarked_img_7116405078940971604.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/121314/ff5e36?text=Mascote';" alt="Mascote" class="h-10 w-10 rounded-full object-cover border border-sunset/50">
+                        <span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-500 border border-grafite-900 animate-pulse"></span>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-black text-white uppercase tracking-wider">Alma de Ferro</h4>
+                        <span class="text-[10px] text-gray-400">Mascote Oficial da Iron Soul</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-1">
+                    <button onclick="clearChatHistory()" class="p-1.5 hover:text-red-400 text-gray-500 rounded transition" title="Limpar Histórico">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                    <button onclick="toggleMascotChat()" class="p-1.5 hover:text-white text-gray-500 rounded transition">
+                        <i class="fa-solid fa-xmark text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages List -->
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 scroll-smooth">
+                <!-- Welcome Message -->
+                <div class="flex items-start gap-2 max-w-[85%]">
+                    <img src="watermarked_img_7116405078940971604.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/121314/ff5e36?text=Mascote';" alt="Mascote" class="h-6 w-6 rounded-full object-cover border border-sunset/30">
+                    <div class="p-3 rounded-2xl rounded-tl-none bg-grafite-900 text-xs text-gray-200 leading-relaxed border border-gray-800">
+                        🔥 E aí, MONSTRO! Pronto para evoluir hoje? Sou o mascote elemental da <strong>Iron Soul</strong>. Me pergunta algo sobre treino, motivação, ou pede pra eu te ajudar com as peças do nosso e-commerce! Bora esmagar!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing indicator -->
+            <div id="chat-typing" class="hidden px-4 py-2 flex items-center gap-2 text-gray-400 text-xs">
+                <span class="typing-dot h-1.5 w-1.5 bg-sunset rounded-full"></span>
+                <span class="typing-dot h-1.5 w-1.5 bg-sunset rounded-full"></span>
+                <span class="typing-dot h-1.5 w-1.5 bg-sunset rounded-full"></span>
+                <span class="ml-1 text-[10px] text-gray-500">Mascote pensando...</span>
+            </div>
+
+            <!-- Quick Suggestions -->
+            <div class="px-4 py-2 bg-grafite-900/40 flex flex-wrap gap-1.5 border-t border-gray-800">
+                <button onclick="sendQuickPrompt('Me motive com uma frase insana!')" class="text-[9px] font-bold uppercase bg-grafite-900 hover:bg-sunset/15 border border-gray-700 hover:border-sunset text-gray-400 hover:text-sunset px-2.5 py-1 rounded-full transition">🔥 Motivação!</button>
+                <button onclick="sendQuickPrompt('Dicas de treino de 15 minutos em casa')" class="text-[9px] font-bold uppercase bg-grafite-900 hover:bg-sunset/15 border border-gray-700 hover:border-sunset text-gray-400 hover:text-sunset px-2.5 py-1 rounded-full transition">🏃 Treino Curto</button>
+                <button onclick="sendQuickPrompt('Qual o uniforme ideal para treinar pesado no frio?')" class="text-[9px] font-bold uppercase bg-grafite-900 hover:bg-sunset/15 border border-gray-700 hover:border-sunset text-gray-400 hover:text-sunset px-2.5 py-1 rounded-full transition">🧥 Dica de Roupa</button>
+            </div>
+
+            <!-- Message Input -->
+            <div class="p-3 bg-grafite-900 border-t border-gray-700 flex items-center gap-2">
+                <input type="text" id="chat-input" onkeydown="handleChatKeyPress(event)" placeholder="Mande sua mensagem, guerreiro..." class="flex-1 bg-grafite-800 text-xs text-gray-200 rounded-xl px-4 py-3 border border-gray-700 focus:outline-none focus:border-sunset">
+                <button onclick="sendChatMessage()" class="h-10 w-10 rounded-xl gradient-bg text-white flex items-center justify-center hover:opacity-90 active:scale-95 transition">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE SIDE SHOPPING CART -->
+    <div id="cart-modal" class="fixed inset-y-0 right-0 max-w-md w-full bg-grafite-800 border-l border-gray-700 shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col justify-between">
+        
+        <!-- Cart Header -->
+        <div class="p-6 border-b border-gray-700 flex items-center justify-between">
+            <h3 class="text-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-basket-shopping text-sunset"></i> Seu Carrinho
+            </h3>
+            <button onclick="toggleCartModal()" class="p-2 text-gray-400 hover:text-white rounded-full bg-grafite-900">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List Container -->
+        <div id="cart-items-container" class="p-6 overflow-y-auto flex-1 space-y-4">
+            <!-- Dynamically populated cart items or empty message -->
+        </div>
+
+        <!-- Cart Footer and Actions -->
+        <div class="p-6 border-t border-gray-700 bg-grafite-900 space-y-4">
+            <div class="flex justify-between items-center text-sm">
+                <span class="text-gray-400">Subtotal:</span>
+                <span id="cart-subtotal" class="text-white font-black text-lg">R$ 0,00</span>
+            </div>
+            <div class="flex justify-between items-center text-xs text-gray-400 border-b border-gray-800 pb-3">
+                <span>Frete:</span>
+                <span id="cart-shipping" class="text-emerald-400 font-semibold">Grátis</span>
+            </div>
+            <button onclick="checkoutCart()" class="w-full gradient-bg text-white font-bold py-3.5 rounded-xl hover:opacity-95 transition uppercase tracking-wider text-xs">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    <!-- Alert Dialog Pop-up -->
+    <div id="alert-box" class="fixed top-24 left-1/2 transform -translate-x-1/2 bg-grafite-800 border border-sunset/50 px-6 py-4 rounded-xl shadow-2xl z-50 hidden flex items-center gap-3 animate-bounce">
+        <i class="fa-solid fa-circle-check text-sunset text-xl animate-pulse"></i>
+        <p id="alert-msg" class="text-white text-sm font-semibold"></p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-grafite-900 border-t border-gray-800 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="h-10 w-10 flex items-center justify-center bg-grafite-800 rounded-lg p-1.5 border border-gray-750 relative overflow-hidden">
+                        <!-- Footer Logo from User Link -->
+                        <img id="footer-logo-img" src="https://gemini.google.com/share/7d8a75b2a65e" alt="Logo Iron Soul Footer" class="h-full w-full object-contain hidden" 
+                             onload="this.classList.remove('hidden'); document.getElementById('footer-logo-svg').classList.add('hidden')" 
+                             onerror="this.classList.add('hidden'); document.getElementById('footer-logo-svg').classList.remove('hidden')">
+                        
+                        <!-- Fallback Footer Vector Logo -->
+                        <svg id="footer-logo-svg" class="h-full w-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="ironSoulGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff5e36" />
+                                    <stop offset="100%" stop-color="#a81eff" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="50,6 90,26 90,74 50,94 10,74 10,26" fill="none" stroke="url(#ironSoulGradFooter)" stroke-width="5" stroke-linejoin="round"/>
+                            <path d="M30,30 L40,30 L40,70 L30,70 Z" fill="url(#ironSoulGradFooter)"/>
+                            <path d="M46,30 L68,30 L68,42 L46,42 L46,50 L68,58 L68,70 L46,70 L46,62 L58,62 L58,58 L46,54 Z" fill="url(#ironSoulGradFooter)"/>
+                            <polygon points="41,45 52,45 47,55 55,55 45,71 48,58 41,58" fill="#ffffff" opacity="0.9"/>
+                        </svg>
+                    </div>
+                    <span class="text-lg font-black tracking-tight uppercase text-white">IRON <span class="gradient-text">SOUL</span></span>
+                </div>
+                <p class="text-xs leading-relaxed text-gray-500">
+                    A marca esportiva de alta resistência feita por e para atletas radicais. Vista a nossa atitude indomável e supere todos os recordes.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Produtos</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#catalogo" class="hover:text-sunset">Camisetas Pro</a></li>
+                    <li><a href="#catalogo" class="hover:text-sunset">Regatas Racerback</a></li>
+                    <li><a href="#catalogo" class="hover:text-sunset">Moletons Streetwear</a></li>
+                    <li><a href="#mascote-banner" class="hover:text-sunset">Coleção Copa do Mundo</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Corporativo</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#calculadora-orcamento" class="hover:text-sunset">Lotes de Uniformes</a></li>
+                    <li><a href="#uniformes-decorativos" class="hover:text-sunset">Uniformes de Colaboradores</a></li>
+                    <li><a href="#" class="hover:text-sunset">Contato para Vendas B2B</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4">Atendimento</h4>
+                <div class="space-y-2 text-xs">
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-sunset"></i> contato@ironsoul.com.br</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-sunset"></i> (11) 99999-8888</p>
+                    <p class="text-gray-500 text-[10px] mt-2">© 2026 Iron Soul Sportswear Ltda. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STORE LOGIC SCRIPT -->
+    <script>
+        // Static product catalog matched to the design specifications and uniform assets
+        const products = [
+            {
+                id: 1,
+                name: "Camiseta Masculina Dry-Fit Premium",
+                category: "Camiseta",
+                gender: "Masculino",
+                price: 129.90,
+                sizes: ["P", "M", "G", "GG"],
+                image: "watermarked_img_16825667129626596257.png",
+                badge: "Performance",
+                desc: "Cinza grafite com detalhes sutis e logotipo emborrachado.",
+                isUniform: true
+            },
+            {
+                id: 2,
+                name: "Regata Masculina Machão",
+                category: "Regata",
+                gender: "Masculino",
+                price: 99.90,
+                sizes: ["M", "G", "GG"],
+                image: "watermarked_img_16825667129626596257.png",
+                badge: "Lançamento",
+                desc: "Dry-Fit Mesh respirável ideal para treinos extremos.",
+                isUniform: true
+            },
+            {
+                id: 4,
+                name: "Baby Look Feminina Premium Soft",
+                category: "Camiseta",
+                gender: "Feminino",
+                price: 119.90,
+                sizes: ["P", "M", "G"],
+                image: "watermarked_img_16825667129626596257.png",
+                badge: "Exclusivo",
+                desc: "Acabamento Soft-Touch acinturado com estampa traseira vertical.",
+                isUniform: true
+            },
+            {
+                id: 5,
+                name: "Regata Feminina Nadador Racerback",
+                category: "Regata",
+                gender: "Feminino",
+                price: 89.90,
+                sizes: ["P", "M", "G"],
+                image: "watermarked_img_16825667129626596257.png",
+                badge: "Foco Total",
+                desc: "Tecido super leve com costas nadador em tecido telado.",
+                isUniform: true
+            },
+            {
+                id: 7,
+                name: "Manto Especial Copa do Mundo Mascot",
+                category: "Camiseta",
+                gender: "Masculino",
+                price: 159.90,
+                sizes: ["P", "M", "G", "GG"],
+                image: "watermarked_img_7116405078940971604.png",
+                badge: "Limited Edition",
+                desc: "Estampa exclusiva em relevo do mascote Iron Soul.",
+                isUniform: false
+            },
+            {
+                id: 8,
+                name: "Camiseta Feminina Arena Cup",
+                category: "Camiseta",
+                gender: "Feminino",
+                price: 149.90,
+                sizes: ["P", "M", "G"],
+                image: "watermarked_img_7116405078940971604.png",
+                badge: "Limited Edition",
+                desc: "Projetada para máximo fluxo de ar sob condições extremas.",
+                isUniform: false
+            }
+        ];
+
+        // Global State variables
+        let selectedSizes = [];
+        let maxPrice = 350;
+        let cart = [];
+        
+        // Gemini API Configuration
+        const apiKey = ""; // Leaving key empty to let the environment inject it automatically at runtime.
+        let chatHistory = []; // Keeps track of conversational turns with the mascot
+
+        // App Initializer
+        window.onload = function() {
+            renderProducts(products);
+            calculateBudget();
+            updateCartUI();
+        };
+
+        // Render products into grid
+        function renderProducts(productsToRender) {
+            const grid = document.getElementById("product-grid");
+            const emptyState = document.getElementById("empty-state");
+            const counter = document.getElementById("product-count");
+
+            counter.innerText = productsToRender.length;
+            grid.innerHTML = "";
+
+            if (productsToRender.length === 0) {
+                emptyState.classList.remove("hidden");
+                grid.classList.add("hidden");
+                return;
+            }
+
+            emptyState.classList.add("hidden");
+            grid.classList.remove("hidden");
+
+            productsToRender.forEach(prod => {
+                const sizesHtml = prod.sizes.map(s => `<span class="bg-grafite-900 border border-gray-700 rounded text-[10px] px-1.5 py-0.5 text-gray-400 font-bold">${s}</span>`).join(" ");
+                
+                const card = `
+                    <div class="bg-grafite-800 rounded-2xl border border-gray-800 overflow-hidden shadow-lg group hover:border-sunset/50 transition-all duration-300 flex flex-col justify-between">
+                        <div class="relative">
+                            <!-- Badge -->
+                            <span class="absolute top-3 left-3 gradient-bg text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full z-10 shadow-md">
+                                ${prod.badge}
+                            </span>
+                            <!-- Product Image -->
+                            <div class="overflow-hidden aspect-square flex items-center justify-center p-4 bg-grafite-900">
+                                <img src="${prod.image}" onerror="this.onerror=null; this.src='https://placehold.co/300x300/121314/ff5e36?text=${encodeURIComponent(prod.name)}';" alt="${prod.name}" class="h-full w-full object-contain rounded-xl transform group-hover:scale-105 transition duration-500">
+                            </div>
+                        </div>
+                        
+                        <!-- Details -->
+                        <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+                            <div class="space-y-1">
+                                <span class="text-[10px] font-black tracking-widest uppercase text-sunset">${prod.gender} • ${prod.category}</span>
+                                <h3 class="font-bold text-sm text-white group-hover:text-sunset transition leading-tight">${prod.name}</h3>
+                                <p class="text-xs text-gray-400 line-clamp-2">${prod.desc}</p>
+                            </div>
+
+                            <div class="space-y-3 pt-2">
+                                <div class="flex flex-wrap gap-1">
+                                    ${sizesHtml}
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-xs text-gray-500 block">Preço</span>
+                                        <span class="text-lg font-black text-white">R$ ${prod.price.toFixed(2).replace('.', ',')}</span>
+                                    </div>
+                                    <button onclick="addToCart(${prod.id})" class="p-3 bg-grafite-900 border border-gray-700 group-hover:border-sunset hover:bg-sunset text-white hover:text-white rounded-xl transition duration-300">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // Apply filters based on Sidebar parameters
+        function applyFilters() {
+            const catBoxes = document.querySelectorAll('input[name="category"]:checked');
+            const checkedCategories = Array.from(catBoxes).map(cb => cb.value);
+
+            const genBoxes = document.querySelectorAll('input[name="gender"]:checked');
+            const checkedGenders = Array.from(genBoxes).map(gb => gb.value);
+
+            const searchText = document.getElementById("global-search").value.toLowerCase();
+
+            let filtered = products.filter(p => {
+                if (checkedCategories.length > 0 && !checkedCategories.includes(p.category)) {
+                    return false;
+                }
+                if (checkedGenders.length > 0 && !checkedGenders.includes(p.gender)) {
+                    return false;
+                }
+                if (selectedSizes.length > 0 && !p.sizes.some(s => selectedSizes.includes(s))) {
+                    return false;
+                }
+                if (p.price > maxPrice) {
+                    return false;
+                }
+                if (searchText && !p.name.toLowerCase().includes(searchText)) {
+                    return false;
+                }
+                return true;
+            });
+
+            const sortVal = document.getElementById("sort-select").value;
+            sortProductsList(filtered, sortVal);
+        }
+
+        function sortProducts() {
+            applyFilters();
+        }
+
+        function sortProductsList(list, criteria) {
+            if (criteria === "price-low") {
+                list.sort((a, b) => a.price - b.price);
+            } else if (criteria === "price-high") {
+                list.sort((a, b) => b.price - a.price);
+            }
+            renderProducts(list);
+        }
+
+        document.getElementById("global-search").addEventListener("input", applyFilters);
+
+        function toggleSizeFilter(btn, size) {
+            if (selectedSizes.includes(size)) {
+                selectedSizes = selectedSizes.filter(s => s !== size);
+                btn.classList.remove("border-sunset", "text-white");
+                btn.classList.add("text-gray-400");
+            } else {
+                selectedSizes.push(size);
+                btn.classList.remove("text-gray-400");
+                btn.classList.add("border-sunset", "text-white");
+            }
+            applyFilters();
+        }
+
+        function updatePriceSlider(val) {
+            maxPrice = parseInt(val);
+            document.getElementById("price-display").innerText = "R$ " + val;
+            applyFilters();
+        }
+
+        function clearAllFilters() {
+            document.querySelectorAll('input[name="category"]:checked').forEach(cb => cb.checked = false);
+            document.querySelectorAll('input[name="gender"]:checked').forEach(cb => cb.checked = false);
+            
+            selectedSizes = [];
+            document.querySelectorAll(".size-btn").forEach(btn => {
+                btn.classList.remove("border-sunset", "text-white");
+                btn.classList.add("text-gray-400");
+            });
+
+            maxPrice = 350;
+            document.getElementById("price-range").value = 350;
+            document.getElementById("price-display").innerText = "R$ 350";
+            document.getElementById("global-search").value = "";
+
+            renderProducts(products);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+        }
+
+        function displayAlert(message) {
+            const alertBox = document.getElementById("alert-box");
+            const alertMsg = document.getElementById("alert-msg");
+            alertMsg.innerText = message;
+            alertBox.classList.remove("hidden");
+
+            setTimeout(() => {
+                alertBox.classList.add("hidden");
+            }, 3000);
+        }
+
+        // Shopping Cart Implementation
+        function toggleCartModal() {
+            const modal = document.getElementById("cart-modal");
+            modal.classList.toggle("translate-x-full");
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.product.id === productId);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ product, qty: 1 });
+            }
+
+            displayAlert(`"${product.name}" adicionado ao carrinho!`);
+            updateCartUI();
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.product.id !== productId);
+            updateCartUI();
+        }
+
+        function updateCartQuantity(productId, step) {
+            const item = cart.find(item => item.product.id === productId);
+            if (!item) return;
+
+            item.qty += step;
+            if (item.qty <= 0) {
+                removeFromCart(productId);
+            } else {
+                updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById("cart-items-container");
+            const counter = document.getElementById("cart-counter");
+            const subtotalText = document.getElementById("cart-subtotal");
+
+            const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+            counter.innerText = totalQty;
+
+            container.innerHTML = "";
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div id="cart-empty-msg" class="text-center py-12 text-gray-500 space-y-3">
+                        <i class="fa-regular fa-folder-open text-4xl"></i>
+                        <p class="text-sm">Seu carrinho está vazio.</p>
+                    </div>
+                `;
+                subtotalText.innerText = "R$ 0,00";
+                return;
+            }
+
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const itemCost = item.product.price * item.qty;
+                subtotal += itemCost;
+
+                const element = `
+                    <div class="flex items-center justify-between gap-3 p-3 bg-grafite-900 rounded-xl border border-gray-700">
+                        <img src="${item.product.image}" onerror="this.onerror=null; this.src='https://placehold.co/100x100/121314/ff5e36?text=IS';" alt="${item.product.name}" class="h-12 w-12 object-contain bg-grafite-800 rounded-lg">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="text-xs font-bold text-white truncate">${item.product.name}</h4>
+                            <span class="text-xs text-sunset font-semibold">R$ ${item.product.price.toFixed(2).replace('.', ',')}</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="updateCartQuantity(${item.product.id}, -1)" class="p-1 bg-grafite-800 rounded hover:text-sunset"><i class="fa-solid fa-minus text-[10px]"></i></button>
+                            <span class="text-xs font-bold text-white min-w-[15px] text-center">${item.qty}</span>
+                            <button onclick="updateCartQuantity(${item.product.id}, 1)" class="p-1 bg-grafite-800 rounded hover:text-sunset"><i class="fa-solid fa-plus text-[10px]"></i></button>
+                            <button onclick="removeFromCart(${item.product.id})" class="p-1.5 text-gray-500 hover:text-red-500 rounded ml-2"><i class="fa-regular fa-trash-can text-sm"></i></button>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += element;
+            });
+
+            subtotalText.innerText = "R$ " + subtotal.toFixed(2).replace('.', ',');
+        }
+
+        function checkoutCart() {
+            if (cart.length === 0) {
+                displayAlert("O carrinho está vazio!");
+                return;
+            }
+            displayAlert("Pedido encaminhado com sucesso! Obrigado por vestir Iron Soul.");
+            cart = [];
+            updateCartUI();
+            toggleCartModal();
+        }
+
+        // Pricing simulation tool at bottom
+        function updateQtySlider(val) {
+            document.getElementById("calc-qty-badge").innerText = val + " unidades";
+            calculateBudget();
+        }
+
+        // Exponential backoff robust fetch helper
+        async function fetchWithRetry(url, options, retries = 5, delay = 1000) {
+            try {
+                const response = await fetch(url, options);
+                if (!response.ok) {
+                    throw new Error(`Erro de rede ou HTTP: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                if (retries > 0) {
+                    await new Promise(res => setTimeout(res, delay));
+                    return fetchWithRetry(url, options, retries - 1, delay * 2);
+                } else {
+                    throw error;
+                }
+            }
+        }
+
+        function calculateBudget() {
+            const itemSelect = document.getElementById("calc-item");
+            const selectedOption = itemSelect.options[itemSelect.selectedIndex];
+            const basePrice = parseFloat(selectedOption.getAttribute("data-price"));
+            const qty = parseInt(document.getElementById("calc-qty").value);
+
+            let addOnPrice = 0;
+            if (document.getElementById("add-name").checked) addOnPrice += 15.00;
+            if (document.getElementById("add-reflective").checked) addOnPrice += 10.00;
+
+            const unitNetPrice = basePrice + addOnPrice;
+            const subtotal = unitNetPrice * qty;
+
+            let discountRate = 0;
+            if (qty >= 20 && qty < 50) {
+                discountRate = 0.05;
+            } else if (qty >= 50 && qty < 100) {
+                discountRate = 0.10;
+            } else if (qty >= 100) {
+                discountRate = 0.20;
+            }
+
+            const discount = subtotal * discountRate;
+            const finalTotal = subtotal - discount;
+
+            document.getElementById("res-base-unit").innerText = "R$ " + basePrice.toFixed(2).replace('.', ',');
+            document.getElementById("res-add-unit").innerText = "R$ " + addOnPrice.toFixed(2).replace('.', ',');
+            document.getElementById("res-net-unit").innerText = "R$ " + unitNetPrice.toFixed(2).replace('.', ',');
+            document.getElementById("res-subtotal").innerText = "R$ " + subtotal.toFixed(2).replace('.', ',');
+            
+            document.getElementById("res-discount-desc").innerText = `Desconto Progressivo (${discountRate * 100}%):`;
+            document.getElementById("res-discount").innerText = "- R$ " + discount.toFixed(2).replace('.', ',');
+            document.getElementById("res-total").innerText = "R$ " + finalTotal.toFixed(2).replace('.', ',');
+        }
+
+        function submitOrderSimulation() {
+            const qty = document.getElementById("calc-qty").value;
+            const itemName = document.getElementById("calc-item").options[document.getElementById("calc-item").selectedIndex].text.split('(')[0].trim();
+            displayAlert(`Simulação enviada para análise! ${qty}x ${itemName}. Entraremos em contato.`);
+        }
+
+
+        // ==========================================
+        // GEMINI API INTEGRATIONS & CALLS
+        // ==========================================
+
+        /**
+         * Call Gemini API to generate structured suggestions (slogans & art direction)
+         * Using gemini-2.5-flash-preview-09-2025 structured response capabilities.
+         */
+        async function generateSlogansWithAI() {
+            const sport = document.getElementById("ai-sport").value.trim();
+            const tone = document.getElementById("ai-tone").value;
+            const keywords = document.getElementById("ai-keywords").value.trim();
+
+            if (!sport) {
+                displayAlert("Por favor, digite pelo menos o Esporte ou Tema.");
+                return;
+            }
+
+            const btn = document.getElementById("ai-generate-btn");
+            const loaderIcon = document.getElementById("ai-loader-icon");
+            const btnText = document.getElementById("ai-btn-text");
+            const outputContainer = document.getElementById("ai-output-container");
+
+            // UI Feedback during generation
+            btn.disabled = true;
+            loaderIcon.classList.remove("hidden");
+            btnText.innerText = "Processando com IA...";
+
+            const userPrompt = `Gerar slogans impactantes para uniformes esportivos de alta performance baseando-se nos seguintes dados:
+            Esporte ou Contexto: ${sport}
+            Tom das Frases: ${tone}
+            Ideias/Palavras-chave chaves: ${keywords || "Superação e Força"}`;
+
+            const systemPrompt = "Você é um especialista em branding de marcas esportivas e redator publicitário de alto nível com foco em esportes radicais e alta performance.";
+
+            // Constructing structured JSON payload schema for robust rendering
+            const payload = {
+                contents: [{ parts: [{ text: userPrompt }] }],
+                generationConfig: {
+                    responseMimeType: "application/json",
+                    responseSchema: {
+                        type: "OBJECT",
+                        properties: {
+                            slogans: {
+                                type: "ARRAY",
+                                description: "Lista contendo exatamente 3 opções de slogans motivacionais curtos de alto impacto para camisetas esportivas.",
+                                items: { type: "STRING" }
+                            },
+                            styleSuggestion: {
+                                type: "STRING",
+                                description: "Dica curta e prática de como estampar essas frases (posicionamento, cores do degradê, fonte ou efeito gráfico)."
+                            }
+                        },
+                        required: ["slogans", "styleSuggestion"]
+                    }
+                },
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                }
+            };
+
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            try {
+                const result = await fetchWithRetry(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const rawJson = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (rawJson) {
+                    const parsed = JSON.parse(rawJson);
+                    displayAISlogans(parsed);
+                } else {
+                    throw new Error("Formato de resposta inesperado");
+                }
+            } catch (err) {
+                console.error("Falha ao gerar slogans após tentativas:", err);
+                displayAlert("Ocorreu uma instabilidade temporária na API do Gemini. Tente novamente.");
+            } finally {
+                // Restore UI Elements
+                btn.disabled = false;
+                loaderIcon.classList.add("hidden");
+                btnText.innerText = "Gerar Ideias com IA";
+            }
+        }
+
+        // Render AI-generated structured data on screen
+        function displayAISlogans(data) {
+            const container = document.getElementById("ai-output-container");
+            const slogansList = document.getElementById("ai-slogans-list");
+            const artDirectionText = document.getElementById("ai-art-direction");
+
+            slogansList.innerHTML = "";
+            artDirectionText.innerText = data.styleSuggestion || "Combine com o degradê original do logo da Iron Soul (Orange Sunset e Neon Purple) nas costas ou na gola.";
+
+            const list = data.slogans || [];
+            list.forEach(slogan => {
+                const card = `
+                    <div onclick="copyMottoToClipboard(this)" class="bg-grafite-900 border border-gray-700/60 p-3 rounded-xl cursor-pointer hover:border-sunset/50 hover:bg-grafite-900/80 transition flex items-center justify-between group">
+                        <span class="text-xs font-semibold text-gray-200 group-hover:text-white leading-tight pr-2">"${slogan}"</span>
+                        <i class="fa-regular fa-copy text-gray-500 group-hover:text-sunset text-[10px]"></i>
+                    </div>
+                `;
+                slogansList.innerHTML += card;
+            });
+
+            container.classList.remove("hidden");
+            container.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Clipboard function supporting environment constraints
+        function copyMottoToClipboard(element) {
+            const text = element.querySelector('span').innerText;
+            
+            // Fallback for sandboxed canvas frame elements
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            displayAlert(`Copiado: ${text}`);
+        }
+
+
+        // Mascot Chat Operations
+        function toggleMascotChat() {
+            const windowEl = document.getElementById("ai-chat-window");
+            windowEl.classList.toggle("hidden");
+            
+            // Auto scroll to bottom upon open
+            if (!windowEl.classList.contains("hidden")) {
+                const msgBox = document.getElementById("chat-messages");
+                msgBox.scrollTop = msgBox.scrollHeight;
+            }
+        }
+
+        function openMascotChat() {
+            const windowEl = document.getElementById("ai-chat-window");
+            windowEl.classList.remove("hidden");
+            const msgBox = document.getElementById("chat-messages");
+            msgBox.scrollTop = msgBox.scrollHeight;
+        }
+
+        // Sending messaging and waiting response
+        async function sendChatMessage() {
+            const inputEl = document.getElementById("chat-input");
+            const userMsg = inputEl.value.trim();
+
+            if (!userMsg) return;
+
+            // Render User Message
+            renderMessageBubble(userMsg, true);
+            inputEl.value = "";
+
+            // Show Typing Indicator
+            const typingIndicator = document.getElementById("chat-typing");
+            typingIndicator.classList.remove("hidden");
+            
+            const msgBox = document.getElementById("chat-messages");
+            msgBox.scrollTop = msgBox.scrollHeight;
+
+            // System prompt directing the specific mascot's persona
+            const mascotSystemPrompt = `Você é o Mascote Oficial da Iron Soul, um elemental de fogo e metal projetado para a alta performance extrema.
+            Seu tom de voz deve ser:
+            - Extremamente energético e motivado.
+            - Use termos de treino pesado ("monstro", "foco", "esmaga", "no pain no gain", "shape", "cardio", "radiano").
+            - Chame o usuário com apelidos como "guerreiro(a)", "monstro", "gigante", "campeão(ã)".
+            - Seja prestativo: responda com dicas reais de treinos rápidos, nutrição ou sugira as melhores peças da Iron Soul disponíveis no catálogo (ex: Manto Copa, Camiseta Dry-Fit, Moletom Hoodie Canguru).
+            - Seja breve e focado nas respostas. Limite-se a no máximo 2 parágrafos dinâmicos.`;
+
+            // Adding the message to conversational history
+            chatHistory.push({ role: "user", parts: [{ text: userMsg }] });
+
+            const payload = {
+                contents: chatHistory,
+                systemInstruction: {
+                    parts: [{ text: mascotSystemPrompt }]
+                }
+            };
+
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            try {
+                const result = await fetchWithRetry(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const aiText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (aiText) {
+                    // Render Mascot Message
+                    renderMessageBubble(aiText, false);
+                    // Push AI turn into history
+                    chatHistory.push({ role: "model", parts: [{ text: aiText }] });
+                } else {
+                    throw new Error("Conteúdo ausente na resposta.");
+                }
+            } catch (err) {
+                console.error("Falha no chatbot:", err);
+                renderMessageBubble("💥 O cano estourou por aqui, guerreiro! Minha conexão com a forja falhou por um segundo. Manda a brasa de novo!", false);
+            } finally {
+                // Hide indicator and scroll down
+                typingIndicator.classList.add("hidden");
+                msgBox.scrollTop = msgBox.scrollHeight;
+            }
+        }
+
+        // Helper to append message bubbles dynamically
+        function renderMessageBubble(text, isUser) {
+            const msgBox = document.getElementById("chat-messages");
+            let bubbleHtml = "";
+
+            if (isUser) {
+                bubbleHtml = `
+                    <div class="flex items-start justify-end gap-2 w-full">
+                        <div class="max-w-[85%] gradient-bg text-white p-3 rounded-2xl rounded-tr-none text-xs leading-relaxed shadow-md">
+                            ${text}
+                        </div>
+                    </div>
+                `;
+            } else {
+                bubbleHtml = `
+                    <div class="flex items-start gap-2 max-w-[85%] animate-fade-in">
+                        <img src="watermarked_img_7116405078940971604.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/121314/ff5e36?text=Mascote';" alt="Mascote" class="h-6 w-6 rounded-full object-cover border border-sunset/30">
+                        <div class="p-3 rounded-2xl rounded-tl-none bg-grafite-900 text-xs text-gray-200 leading-relaxed border border-gray-805">
+                            ${text}
+                        </div>
+                    </div>
+                `;
+            }
+
+            msgBox.innerHTML += bubbleHtml;
+        }
+
+        function handleChatKeyPress(event) {
+            if (event.key === "Enter") {
+                sendChatMessage();
+            }
+        }
+
+        function sendQuickPrompt(promptText) {
+            document.getElementById("chat-input").value = promptText;
+            sendChatMessage();
+        }
+        
+        function clearChatHistory() {
+            chatHistory = [];
+            const msgBox = document.getElementById("chat-messages");
+            msgBox.innerHTML = `
+                <div class="flex items-start gap-2 max-w-[85%]">
+                    <img src="watermarked_img_7116405078940971604.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/121314/ff5e36?text=Mascote';" alt="Mascote" class="h-6 w-6 rounded-full object-cover border border-sunset/30">
+                    <div class="p-3 rounded-2xl rounded-tl-none bg-grafite-900 text-xs text-gray-200 leading-relaxed border border-gray-800">
+                        🔥 E aí, MONSTRO! Histórico limpo. Pronto para recomeçar o treino e amassar a inércia hoje? Me manda sua pergunta!
+                    </div>
+                </div>
+            `;
+            displayAlert("Histórico do chat reiniciado!");
+        }
+    </script>
+</body>
+</html>
